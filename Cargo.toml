@@ -1,0 +1,36 @@
+[package]
+name = "colonq"
+version = "0.1.0"
+authors = ["Studio Milkfat <contact@milkfat.studio>"]
+edition = "2018"
+build = "build.rs"
+
+[profile.release]
+codegen-units = 1
+
+[build-dependencies]
+gl_generator = "0.14.0" # opengl bindings
+
+[dependencies]
+rand = "*" # rng
+bitflags = "*" # C-style bitwise flags
+sdl2 = {version = "*", features = ["image"]} # sdl2 bindings
+glam = "*" # linear algebra library for opengl
+gltf = {path = "deps/gltf-vrm", features = ["extras", "utils"]} # loader for .gltf models
+tobj = "*" # loader for .obj models
+colored = "2.0.4" # ansi color
+termion = "*" # terminal escapes
+byteorder = "*" # bytes to float
+regex = "*" # regular expressions
+lexpr = "*" # s-expressions
+colors-transform = "*" # parsing and converting colors
+base64 = "*" # base64 encoding
+emojis = "*" # lookup emoji
+image = "*" # decode image
+libmpv-sys = {path = "deps/libmpv-rs/libmpv-sys", features = ["use-bindgen"]} # video playback
+libmpv = {path = "deps/libmpv-rs"} # video playback
+log = "*" # logging
+simple-logging = "*" # logging
+log-panics = { version = "*", features = ["with-backtrace"] } # log panics
+flate2 = "*" # gzip
+tungstenite = { version = "*", features = ["native-tls"] } # websockets
